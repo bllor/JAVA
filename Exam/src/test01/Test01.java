@@ -15,7 +15,7 @@ public class Test01 {
 		boolean	var6= true;
 		boolean	var7= false;
 		String var8= "Hello";
-		String var9= null;
+		String var9= null;//null은 참조형 변수를 초기화하는 변수로 String과 같이 사용된다.
 		
 		System.out.println("var1: "+var1);
 		System.out.println("var2: "+var2);
