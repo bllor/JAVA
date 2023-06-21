@@ -65,26 +65,26 @@ public class inheriTest {
 	
 
 	
-	//Car 상속객체 생성
-	Sedan sonata = new Sedan("소나타","흰색",0,2000);
-	sonata.speedTurbo(20);
-	sonata.show();
-	
-	
-	
-	Truck bongo = new Truck("봉고","남색",0,0);
-	bongo.load(100);
-	bongo.speedup(50);
-	bongo.show();
-	
-	
-	
-	//Account 상속 객체 생성
-	StockAccount kb = new StockAccount("KB증권", "101-123-456", "홍길동", 10000, "삼성전자", 10, 60000);
-	kb.deposit(1000000);
-	kb.buy(5,50000);
-	kb.sell(5,62000);
-	kb.show();
-	
+//	//Car 상속객체 생성
+//	Sedan sonata = new Sedan("소나타","흰색",0,2000);
+//	sonata.speedTurbo(20);
+//	sonata.show();
+//	
+//	
+//	
+//	Truck bongo = new Truck("봉고","남색",0,0);
+//	bongo.load(100);
+//	bongo.speedup(50);
+//	bongo.show();
+//	
+//	
+//	
+//	//Account 상속 객체 생성
+//	StockAccount kb = new StockAccount("KB증권", "101-123-456", "홍길동", 10000, "삼성전자", 10, 60000);
+//	kb.deposit(1000000);
+//	kb.buy(5,50000);
+//	kb.sell(5,62000);
+//	kb.show();
+//	
 	}
 }
