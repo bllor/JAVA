@@ -1,5 +1,15 @@
 package sub07;
-
+/*
+ * 날짜: 2023/06/22
+ * 이름: 최동일
+ * 내용: JAVA다형성 실습하기
+ */
+/*
+ * 다형성(Polymorphism)
+ * -상속관계에서 부모클래스의 기능이 자식클래스에서 닿양한 기능으로 변하는 특성
+ * -객체의 타입선언으 ㄹ부모클래스 타입으로 선언
+ * -다형성을 활용해서 프로그래밍의 중복을 줄이고 유연성을 높임
+ */
 public class PolyTest {
 
 	public static void main(String[] args) {
