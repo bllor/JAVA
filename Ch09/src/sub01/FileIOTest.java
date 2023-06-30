@@ -17,7 +17,7 @@ import java.io.IOException;
  * -프로그램은 데이터 처리와 함께 데이터 저장을 위해 파일 입출력 수행
  * -파일 입출력을 위해 스트림(데이터 연결 통료)사용
  */
-public class FileIOTest {//2.throws IOException을 하거나
+public class FileIOTest {
 
 	public static void main(String[] args) {
 		
@@ -34,14 +34,14 @@ public class FileIOTest {//2.throws IOException을 하거나
 			
 			while(true) {
 				
-			//파일일기
+			//파일읽기
 			int data = fis.read();
 			
 			if(data==-1) {
 				break;
 			}
-			System.out.print(data);
-			System.out.println("-----------------");
+			//System.out.print(data);
+			
 			
 			//숫자를 문자로 변경
 			char ch = (char) data;
@@ -57,10 +57,10 @@ public class FileIOTest {//2.throws IOException을 하거나
 			fis.close();//파일 닫기
 			fos.close();
 			
-		} catch (FileNotFoundException e) { //밑의 catch를 만들지 않고 catch(exception 변수명)e를 해야함.
+		} catch (FileNotFoundException e) {//read에러 
 			e.printStackTrace();
 		} 
-			catch( IOException e) {//write 에러를 막기위해 만듬. 1. catch를 병렬로 연결
+			catch( IOException e) {//write 에러를 막기위해 만듬. 
 			e.printStackTrace();
 		}
 			

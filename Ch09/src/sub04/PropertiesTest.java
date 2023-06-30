@@ -57,7 +57,8 @@ public class PropertiesTest {
 			e.printStackTrace();
 		}
 		
-		//프로퍼티 파일 읽기
+		//프로퍼티 파일 읽기 ->역직렬화
+		
 		String target = "C:\\Users\\Java\\Desktop\\cities.properties";
 		
 		Properties propCitess = new Properties();
