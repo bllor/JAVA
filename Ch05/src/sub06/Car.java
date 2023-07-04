@@ -5,6 +5,7 @@ public class Car {
 	protected String color;
 	protected int speed;
 	
+	//초기화를 위한 생성자
 	public Car(String name, String color, int speed) {
 		this.name= name;
 		this.color= color;

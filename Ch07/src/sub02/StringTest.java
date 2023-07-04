@@ -22,6 +22,7 @@ public class StringTest {
 
 	
 		System.out.println(str1);
+		System.out.println(str2);
 
 		//기본변수의 갑은 stack에 바로 저장이 되지만
 		//참조변수인 문자열은 stack에 주소값이 저장이 되고,  heap에 값이 남있다.
@@ -38,6 +39,7 @@ public class StringTest {
 			System.out.println("str1과  str2가 같다.");
 		}else {
 			System.out.println("str1과  str2가 같다.");
+			System.out.println("------------------------");
 			
 			//문자열 길이
 			

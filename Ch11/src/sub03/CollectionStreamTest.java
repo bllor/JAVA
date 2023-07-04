@@ -27,14 +27,14 @@ public class CollectionStreamTest {
 		names.add("이순신");
 		
 		// 외부반복자를 이용한 출력
-		for(String name : names) {
-			System.out.println("name : "+name);
-		}
-		
-		
-		//내부반복자 이용한 출력
-		Stream<String>stream = names.stream();
-		stream.forEach((name)->{System.out.println("name : "+name);});//foreach와 같은 함수가 api이다.
+//		for(String name : names) {
+//			System.out.println("name : "+name);
+//		}
+//		
+//		
+//		//내부반복자 이용한 출력
+//		Stream<String>stream = names.stream();
+//		stream.forEach((name)->{System.out.println("name : "+name);});//foreach와 같은 함수가 api이다.
 		//성능적인 측면에서는 외부는 메인 스레드 내부는 내부스레드 이용 내부가 좀 더 효율적임
 		
 
@@ -54,8 +54,19 @@ public class CollectionStreamTest {
 		
 //		Stream<Person> p = people.stream();
 //		p.forEach((person)->{System.out.println("이름 : "+people.getName()+" ,나이 : "+people.getAge());});
+//		실행이 안됬던 이유는 변수를 person으로 받기로 했는데 list에게서 이름을 호출했기 때문
 		
 		Stream<Person> stream2 =people.stream();
 		stream2.forEach((p)->{System.out.println("이름 : "+p.getName()+" ,나이 : "+p.getAge());});
 	}
 }
+
+
+
+
+
+
+
+
+
+

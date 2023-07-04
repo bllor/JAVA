@@ -17,12 +17,6 @@ public class FilterStreamTest {
 		
 		
 		List<Integer> numbers =  Arrays.asList(1,2,3,4,5,6,7,8,9,1,2,3);
-//		List<Integer> numbers = new ArrayList<>();
-//		numbers.add(1);
-//		numbers.add(1);
-//		numbers.add(1);
-//		numbers.add(1);로 시작하는 것과 
-//		위의 asList와 같다.
 		
 		System.out.println(numbers);
 		

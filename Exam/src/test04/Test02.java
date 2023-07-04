@@ -28,11 +28,17 @@ import java.util.Scanner;
 		 
 		 try {
 			 searchArray(find,arr);
+			 //배열에서 숫자를 찾음
 			 System.out.println("해당하는 숫자 찾음!!");
 			 
 		 }catch(NotFoundException e) {
 			 System.out.println(e.getMessage());
-		 }finally {
+			// continue;
+			// test1에서는 do while문이 있어서
+			// 예외가 끝나고 다시 연결이 되지만
+			// 여기서는 조건문이 없어서 다시 숫자입력을 받지 않아서 끝난다. 
+		 }
+		 finally {
 			 sc.close();
 		 }
 		 

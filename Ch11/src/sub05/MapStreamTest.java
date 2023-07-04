@@ -1,10 +1,9 @@
-package sub05;
+ package sub05;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.print.DocFlavor.STRING;
 
 /*
  * 날짜 : 2023/07/04
@@ -38,11 +37,11 @@ public class MapStreamTest {
 		System.out.println();
 		
 		List<String> list = Arrays.asList("1,2,3","4,5,6","7,8,9");
-		System.out.print(list);
-		System.out.println();
+//		System.out.print(list);
+//		System.out.println();
 		//flat map
 		//하나의 원소를 여러 개로 쪼갠다.
-		list.stream().flatMap((str)->Arrays.stream(str.split(",")))//str은 문자열을 나타냄
+		list.stream().flatMap((a)->Arrays.stream(a.split(",")))//str은 문자열을 나타냄
 		.forEach(num -> System.out.print(num+","));//숫자가 아니라 문자열 데이터임
 		System.out.println();
 		//flatMapToInt ->flatMap으로 쪼개진 데이터를 인트형으로 만들어줌
@@ -69,4 +68,5 @@ public class MapStreamTest {
 	
 	
 	}
+	
 }
