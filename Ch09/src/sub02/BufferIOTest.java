@@ -44,6 +44,7 @@ public class BufferIOTest {
 				if(data == -1) {
 					break;
 				}
+				//보조스트림 출력
 //				char ch = (char)data;
 //				System.out.print(ch);
 				

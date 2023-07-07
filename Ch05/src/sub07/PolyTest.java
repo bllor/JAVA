@@ -28,10 +28,8 @@ public class PolyTest {
 		보다 통일성이 보인다.
 		*/
 		a1.move();
-		a1.hunt();//얘는 에러가 발생함.
-				  //a1.move는 animal의 move를 호출하는 것임 a1이 animal로 선언되어서 실제적인 인스턴스는 animal
-				  //하지만 상속이 되어서 tiger의 move가 animal의 move를 오버라이드해서 tiger의 move가 출력이 됨.
-				  //이럴경우 animal에 hunt 메서드를 정의하여 호출될 수 있게 만들어야 한다.
+		a1.hunt();
+		
 		a2.move();
 		a2.hunt();
 		
