@@ -12,5 +12,7 @@ public class SQL {
 												+"addr =?,"
 												+"rdate =now()";
 	
+	public static final String SELECT_PRODUCTS="SELECT * FROM `Product` WHERE `stock`='0'";
+	
 
 }

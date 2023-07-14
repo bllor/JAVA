@@ -1,8 +1,10 @@
 package com.shop.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.shop.db.DBHelper;
+import com.shop.db.SQL;
 import com.shop.vo.ProductVO;
 
 public class ProductDAO extends DBHelper{
@@ -19,10 +21,46 @@ public class ProductDAO extends DBHelper{
 		return 0;
 	}
 	public ProductVO selectProduct(String prodNo) {
-		return null;
+		ProductVO vo =null;
+		try {
+			
+			conn=getConnection();
+			psmt= conn.prepareStatement(prodNo);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return vo;
 	}
 	public List<ProductVO> selectProducts() {
-		return null;
+		
+		List<ProductVO> products = new ArrayList<>();
+		
+		try {
+		conn = getConnection();
+		stmt= conn.createStatement();
+		rs = stmt.executeQuery(SQL.SELECT_PRODUCTS);
+			
+		while(rs.next()) {
+			
+			ProductVO vo = new ProductVO();
+			vo.setProdNo(rs.getInt(1));  //컬럼명으로도 가져올 수 있다. rs.getInt(prodNo);
+			vo.setProdName(rs.getString(2));
+			vo.setStock(rs.getInt(3));
+			vo.setPrice(rs.getInt(4));
+			vo.setCompany(rs.getString(5));
+			products.add(vo);
+		}
+		
+		close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
+		return products;
 	}
 	public int updateProduct(ProductVO vo) {
 		return 0;
