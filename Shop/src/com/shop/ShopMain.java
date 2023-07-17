@@ -7,6 +7,7 @@ import com.shop.dao.CustomerDAO;
 import com.shop.dao.OrderDAO;
 import com.shop.dao.ProductDAO;
 import com.shop.vo.CustomerVO;
+import com.shop.vo.OrderVO;
 import com.shop.vo.ProductVO;
 
 public class ShopMain {
@@ -19,9 +20,9 @@ public class ShopMain {
 		
 		Scanner sc = new Scanner(System.in);
 
-		CustomerDAO customerDAO= CustomerDAO.getInstance();
-		OrderDAO orderDAO = OrderDAO.getInstance();
-		ProductDAO productDAO = ProductDAO.getInstance();
+		CustomerDAO customerDao= CustomerDAO.getInstance();
+		OrderDAO orderDao = OrderDAO.getInstance();
+		ProductDAO productDao = ProductDAO.getInstance();
 		
 		CustomerVO loginedCustomer = null;
 		
@@ -32,17 +33,19 @@ public class ShopMain {
 			}else {
 			System.out.println("종료:0, 로그아웃:1, 상품목록 : 3, 구매하기 : 4");
 			}
+			
+			System.out.print("선택 : ");
 			int answer = sc.nextInt();
 			if(answer==0) {
 				break;
 			}else if(answer==1) {
 				
 				if(loginedCustomer==null) {
-				System.out.println("아이디 입력");
+				System.out.print("아이디 입력");
 				String custid = sc.next();
 				
 				
-				loginedCustomer = customerDAO.selectCustomer(custid);
+				loginedCustomer = customerDao.selectCustomer(custid);
 				
 		
 					if(loginedCustomer !=null) {
@@ -56,6 +59,8 @@ public class ShopMain {
 				}	
 					
 				}else {
+					//로그아웃 처리
+					System.out.println(loginedCustomer.getName()+"님 안녕히 가세요.");
 					loginedCustomer=null;
 					
 				}
@@ -76,7 +81,7 @@ public class ShopMain {
 				System.out.print("주소 입력: ");
 				vo.setAddr(sc.next());
 				
-				int result = customerDAO.insertCustomer(vo);
+				int result = customerDao.insertCustomer(vo);
 				
 				if(result>0) {
 					System.out.println("회원가입을 축하합니다.");
@@ -86,14 +91,14 @@ public class ShopMain {
 
 			}else if(answer==3) {
 				//상품목록
-				List<ProductVO> products = productDAO.selectProducts();
+				List<ProductVO> products = productDao.selectProducts();
 				System.out.println("-------------------상품목록------------------");
 				for(ProductVO product : products) {
 					System.out.println(product);
 				}
 				System.out.println("----------------------------------------------");
 			}else if(answer==4) {
-				
+				//주문하기
 				if(loginedCustomer == null) {
 					System.out.println("로그인을 하시오.");
 					continue;
@@ -102,7 +107,27 @@ public class ShopMain {
 				System.out.println("주문 상품번호 입력");
 				int prodNo = sc.nextInt();
 				
-				 =productDAO.selectProducts(prodNo);
+				System.out.print("주문 수량 입력: ");
+				int prodCount = sc.nextInt();
+				
+				//주문객체 생성
+				OrderVO orderVO = new OrderVO();
+				orderVO.setOrderProduct(prodNo);
+				orderVO.setOrderCount(prodCount);
+				orderVO.setOrderId(loginedCustomer.getCustid());
+				
+				//주문처리
+				int result = orderDao.insertOrder(orderVO);
+				
+				// 상품 재고 수정
+				productDao.updateProductStock(prodNo, prodCount);
+				
+				if(result>0) {
+					System.out.println("상품주문이 완료 되었습니다.");
+					
+				}else {
+					System.out.println("상품주문이 실패하였습니다.");
+				}
 				
 			}
 			

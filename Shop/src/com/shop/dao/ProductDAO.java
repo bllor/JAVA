@@ -62,8 +62,21 @@ public class ProductDAO extends DBHelper{
 		
 		return products;
 	}
-	public int updateProduct(ProductVO vo) {
-		return 0;
+	public void updateProductStock(int prodNo, int prodCount) {
+		
+		try {
+			conn=getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_PRODUCTS_STOCK);
+			psmt.setInt(1, prodCount);
+			psmt.setInt(2, prodNo);
+			
+			psmt.executeUpdate();
+			close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
 	}
 	public int deleteProduct(String prodNo) {
 		return 0;
