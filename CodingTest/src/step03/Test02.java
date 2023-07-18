@@ -1,6 +1,6 @@
 package step03;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Test02 {
@@ -20,5 +20,6 @@ public class Test02 {
 				System.out.println(result);
 			}
 		}
+		sc.close();
 	}
 }
