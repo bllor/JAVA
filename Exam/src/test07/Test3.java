@@ -54,13 +54,13 @@ class User{
 		
 	}
 	
-	public void takeBus() {
-		bus.Take(name);
+	public void takeBus(Bus Bus) {
+		Bus.Take(name);
 	}
 
 
-	public void takeSubway(Take(String name)) {
-		subway.Take(name);
+	public void takeSubway(Subway Subway) {
+		Subway.Take(name);
 	}
 
 }
