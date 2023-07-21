@@ -16,7 +16,10 @@ class Bus{
 	}
 	
 	public void Take(String name) {
-		System.out.printf("$s은 %s버스틑 탑니다.\n",name,number);
+		System.out.printf("%s은 %s버스틑 탑니다.\n",name,number);
+		//System.out.printf("$s은 %s호선 지하철을 탑니다.\n",name,line);
+		//처럼 %s가 아닌 $s로 해서 에러가 난것.
+		
 		System.out.printf("버스요금은 %,d입니다.\n",fee);
 	}
 	
@@ -54,13 +57,13 @@ class User{
 		
 	}
 	
-	public void takeBus(Bus Bus) {
-		Bus.Take(name);
+	public void takeBus(Bus bus) {
+		bus.Take(name);
 	}
 
 
-	public void takeSubway(Subway Subway) {
-		Subway.Take(name);
+	public void takeSubway(Subway subway) {
+		subway.Take(name);
 	}
 
 }
