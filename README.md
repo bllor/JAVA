@@ -19,8 +19,7 @@
 3.MethodType 실습하기
 4.MethodOverload 실습하기</code></pre>
 ### Ch05.객체지향 프로그래밍
-<pre><code>
-1.Class 실습하기
+<pre><code>1.Class 실습하기
 2.캡슐화 실습하기
 3.싱글톤 객체 실습하기
 4.Class 상속 실습하기
